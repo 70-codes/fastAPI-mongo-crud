@@ -2,7 +2,13 @@
 
 from fastapi import FastAPI
 import uvicorn
+
+
+from routes.student import student_router
+
 app = FastAPI()
+
+app.include_router(student_router)
 
 @app.get('/')
 async def root():
